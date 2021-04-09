@@ -1,0 +1,37 @@
+swagger: 2.0.0
+info:
+  description: Example of Swagger
+  version: 1.0.0
+  title: Swagger Demo
+schemes:
+  - http
+basePath: "/api/v1"
+tags:
+- name: Users
+  description: Everything about user
+paths:
+  /apartment:
+     $ref: paths/apartment.yaml
+
+  /nearhouse:
+     $ref: paths/housenear.yaml
+
+  /rattings:
+     $ref: paths/rattings.yaml
+
+  /dia_diem_noi_bat:
+     $ref: paths/dia_diem_noi_bat.yaml
+    
+  /chi tiet cac can ho trong thanh pho do:
+    $ref:  paths/fiter_city.yaml
+
+  /apartment_detail:
+    $ref:  paths/Apartment_detail.yaml
+    
+  /apartment_comment:
+    $ref:  paths/Apartment_comment.yaml
+
+  /hotelnearby:
+    $ref:  paths/Hotel_nearBy.yaml
+
+ 

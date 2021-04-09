@@ -1,0 +1,39 @@
+get:
+  tags:
+  - Check Booking
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: Kiễm tra ngày user booking còn trống hay không
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: /apartments/checkBooking
+      schema:
+        type: object
+        properties:
+          id: 
+            type: int
+            example: 8
+          id_apartment: 
+            type: int
+            example: 21
+          check_in: 
+            type: string
+            example: "2021-01-21"
+          check_out: 
+            type: string
+            example: "2021-01-22"

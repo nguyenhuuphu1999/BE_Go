@@ -1,0 +1,48 @@
+get:
+  tags:
+  - Users
+  summary: /hotel_nearBy
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: /hotel_nearBy
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: User 1
+      password:
+        type: string
+        example: "12345678"
+  responses:
+    200:
+      description: Create user success
+      schema:
+        type: object
+        properties:
+          title_kinds_of_house:
+            type: varchar
+            example: "Khách sạn"
+
+          url_image:
+            type: string
+            example: "home/tp_hcm/page_hcm_15"
+
+          apartment_name:
+            type: string
+            example: ☀ BRIGHT 1br + balcony + parking @CENTRAL D1 ☀"
+          
+          ratings:
+            type: int
+            example: 4
+
+          price:
+            type: int
+            example: 13
+
+         

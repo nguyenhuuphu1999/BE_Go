@@ -1,0 +1,105 @@
+get:
+  tags:
+  - Users
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: page home
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: User 1
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: Page Home 
+      schema:
+        type: object
+        properties:
+          typeHouse:
+            type: object
+            properties:
+              id:
+                type: int
+                example: 1
+              image_url:
+                type: string
+                example: home/home_toan_bo_nha
+              title:
+                type: string
+                example: HomeStay
+            
+          apartment:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: int
+                  example: 9
+                id_city:
+                  type: int
+                  example: 1
+                id_type_house:
+                  type: int
+                  example: 3
+                apartment_name:
+                  type: string
+                  example: PRIVATE BALCONY ⭐ Local Neighborhood  ❤ of city 3
+                price:
+                  type: int
+                  example: 17
+                ratings:
+                  type: int
+                  example: 4
+             
+
+          diaDiemNoiBat:
+            type: object
+            properties:
+              id:
+                type: int
+                example: 1
+              name_city:
+                type: string
+                example: Thành Phố Hồ Chí Minh
+              image_url:
+                type: string
+                example: home/home_tphcm
+
+          comment:
+            type: object
+            properties:
+              id:
+                type: int
+                example: 1
+              id_apartment:
+                type: int
+                example: 10
+              comment:
+                type: string
+                example: Chỗ ở giống y như hình, nội thất, cách bài trí làm phòng rất rộng rãi và tinh tươm.\r\n
+              rattings:
+                type: int
+                example: 5
+              id_user:
+                type: int
+                example: 1
+              user:
+                type: object
+                properties:
+                  address:
+                    type: string
+                    example: Bình Định
+
+
+        

@@ -1,0 +1,423 @@
+
+GET  http://localhost:3000/apartment
+
+
+######################3
+GET  http://localhost:3000/housenear
+
+
+######################3
+GET  http://localhost:3000/feedback
+
+######################3
+GET  http://localhost:3000/dia_diem_noi_bat
+
+
+
+######################3
+GET  http://localhost:3000/footer
+
+######################3
+GET  http://localhost:3000/footer_cong_dong
+######################3
+GET  http://localhost:3000/footerdon_tiep_khach
+######################3
+GET  http://localhost:3000/footer_gioi_thieu
+######################3
+GET  http://localhost:3000/footer_ho_tro
+
+
+######################3
+GET  http://localhost:3000/fiter_city?id=4
+
+
+
+######################3 apartment_detail
+GET  http://localhost:3000/apartment/detail?id=10
+
+
+######################3 apartment_detail
+GET  http://localhost:4001/apartment/detail/comment?id=10
+
+
+######################3 Dang_ky ok 
+POST   http://localhost:3000/dang_ky
+Content-Type: application/json
+
+{
+    "username":"phu_nguyen", 
+    "pass":"123",
+     "fullname" : "NGuyen HUu Phu" ,
+     "date_of_birth":"1999-10-10",
+      "address":"Binh Dinh",
+       "avata" :"Chua co",
+       " phone_number":"0369202024"
+}
+
+
+
+
+
+######################3 login
+POST    http://localhost:3000/login
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2MTA5Mzg5NTgsImV4cCI6MTYxMDk0MjU1OH0._zsI47IVlNwxwrtCNxLoZh3Q1pY23zax7sUrqxi8gB0
+
+{
+    "username":"phunguyen", 
+    "pass":"123456"
+     
+}
+
+
+######################3 promotion ok
+GET    http://localhost:4001/promotions
+
+
+
+######################3 hotelnearby ok 
+GET    http://localhost:3000/hotelnearby
+
+######################3 cho_o_gan_ban ok 
+GET  http://localhost:3000/cho_o_gan_ban
+
+
+
+################################################## API ################################################
+###ok
+
+GET  http://localhost:4001/home
+###ok
+
+GET  http://localhost:4001/apartments/hotels
+###ok
+http://localhost:4001/apartments/hotels?cho-o-rieng/?page=3
+GET  http://localhost:4001/apartments/cho-o-rieng/?page=5
+
+
+################ok // edit
+GET  http://localhost:4001/apartments/city/2/apartment
+
+#######################ok âprtment
+
+GET  http://localhost:4001/apartments/1/typeApartment?page=1
+
+#######################ok
+
+GET  http://localhost:4001/apartments/10/detail
+
+
+#######################(bo)
+
+POST  http://localhost:4001/apartments/checkBooking
+Content-Type: application/json
+
+{
+    "id_apartment":105,
+    "check_in": "2021-03-10",
+    "check_out": "2021-03-13"
+}
+#######################(bo)
+
+POST  http://localhost:4001/apartments/booking
+Content-Type: application/json
+
+{
+  "id_user": 120,
+  "id_apartment":9,
+  "image": "https://a0.muscache.com/im/pictures/9423cbd5-9fda-420b-900e-ed2b8e45aada.jpg?im_w=720",
+  "name_apartment": "40m2 Spacious Apt of cultural neighborhood",
+  "so_ngay": 0,
+  "so_tien": 13,
+  "tong_tien": 13,
+  "check_in": "2021-03-23",
+  "check_out": "2021-03-23",
+  "email": "nhp2132@gmail.com",
+  "ho_ten": "Nguyễn Hữu Phú",
+  "ma_hoa_don": "1zycb2v8k3"
+}
+####
+POST  http://localhost:4001/apartments/lich_su_dat_phong
+Content-Type: application/json
+
+{
+    "data":["100","200","199"]
+}
+
+#######################(bo)
+
+GET  http://localhost:4001/apartments/21/checkBooking
+####################### list booking (edit)
+
+GET  http://localhost:4001/apartments/11/bookings
+
+
+#######################(fix)
+
+GET  http://localhost:4001/users/1
+
+########################### 2021-01-21(fix)
+
+POST   http://localhost:4001/apartments/bookings
+Content-Type: application/json
+
+{
+    "id_apartment":21,
+    "id_user":2,
+    "check_in":"2021-01-21",
+    "check_out":"2021-01-22",
+    "ho_ten":"Nguyen huu phu",
+    "email":"Email",
+    "so_dien_thoai":"01365355",
+    "phi_dich_vu":15,
+    "total": 71
+}
+
+########################### 2021-01-23 (next)(fix)
+
+POST http://localhost:4001/register/?type=own
+Content-Type: application/json
+
+    {
+        "username":"huuphu" ,
+        "full_name":"Nguyen Huu Phu",
+        "passwd":"123456" ,
+        "phone_number":"0369202024",
+        "email":"dsdsdsdsadaxc@gmial.com"
+    }
+
+
+########################### 2021-01-23 (feedback)(bo cai nay chi lay cai tren thay test dang ky user thuong hay own thay vao cho type)
+
+POST http://localhost:4001/Register/?type=user
+Content-Type: application/json
+
+{
+    "username":"huuphu" ,
+    "passwd":"123456" ,
+    "full_name":"Nguyen Huu Phu",
+    "email":"nhp2132@gmail.com",
+    "phone_number":"0369202024"  
+}
+
+
+#######################
+
+POST  http://localhost:4001/sendMailForResgister/andRegisterOwn
+Content-Type: application/json
+
+{
+    "username" :"",
+    "full_user" :"",
+    "date_of_birth" :"1999-10-28",
+    "phone_number":"",
+    "email":""
+}
+
+#######################(xem lai)
+
+POST   http://localhost:4001/comfimRegister/user
+Content-Type: application/json
+
+{
+    "code":"136200",
+    "email": "nhp2132@gmail.comjgykhjgfds"
+}
+
+#######################(fix)
+
+PUT    http://localhost:4001/users/35?type=user 
+Content-Type: application/json
+Content-Type: multipart/form-data
+
+{
+    "path":"hinh.jpg",
+    "about":"Chủ nhà vui tính hiền lành tốt bụng dễ thương đẹp trai",
+    "email":"nhp2132@gmail.com",
+    "phone_number":"0369202024",
+    "full_user":"Nguyễn Hữu Phú",
+    "language":"Vietnammes",
+    "id":30
+}
+
+
+
+
+#######################(28-1-2021)(bo)
+
+POST   http://localhost:4001/uploadImageOwn/avatar
+Content-Type: multipart/form-data
+
+
+#######################(28-1-2021)(bo)
+
+PUT   http://localhost:4001/uploadImageOwn/avatar
+Content-Type: multipart/form-data
+
+#######################(28-1-2021)(bo)
+
+PUT   http://localhost:4001/apartment/9
+Content-Type: application/json
+
+{
+    "apartment_name": "req.body.apartment_name"
+}
+
+#######################(28-1-2021) multiple(bo)
+
+POST   http://localhost:4001/UploadMultiple/multiple
+Content-Type: multipart/form-data
+
+
+#######################(28-1-2021)
+
+POST   http://localhost:4001/apartment
+Content-Type: application/json
+
+{
+    "id_district":1,
+    "id_city":null,
+    "id_number_rooms":2,
+    "id_type_house":1,
+    "apartment_name": "",
+    "price": null,
+    "ratings" :null,
+    "id_user_own":114,
+    "image_url":"",
+    "provincial":"Ho Chi Minh"
+}
+
+
+#######################(28-1-2021)//limit
+
+GET http://localhost:4001/apartment/1?limit=2
+
+############################
+GET  http://localhost:4001/apartment/1/?limit=all
+
+###3
+GET  http://localhost:4001/apartment/
+####################
+PUT    http://localhost:4001/apartment/160
+Content-Type: application/json
+
+{
+    "id_district":1,
+    "id_city":1,
+    "id_type_house":1,
+    "apartment_name": "",
+    "price": 20,
+    "ratings" :null,
+    "id_user_own":1,
+    "image_url":""
+}
+####################3
+DELETE  http://localhost:4001/apartment/
+
+####################3
+GET  http://localhost:4001/apartments/9?type="own"
+
+#######################(28-1-2021)(fix)
+
+PUT   http://localhost:4001/apartment/157
+Content-Type: application/json
+
+{
+    "id_district":1,
+    "id_city":2,
+    "id_district":1,
+    "id_type_house":1,
+    "apartment_name": "",
+    "price": 25,
+    "ratings" :5,
+    "id_user_own":1,
+    "image_url":""
+}
+
+
+#######################City
+
+GET   http://localhost:4001/city
+Content-Type: application/json
+
+#######################TypeHouse
+
+GET   http://localhost:4001/typeHouse
+Content-Type: application/json
+
+#######################Room
+
+GET   http://localhost:4001/room
+Content-Type: application/json
+
+#######################Room
+
+POST   http://localhost:4001/login/login_user?type=user
+Content-Type: application/json
+
+
+{
+    "email":"nhp2132@gmail.com", 
+    "passwd":"123456"
+     
+}
+
+##################
+PUT http://localhost:4001/profile/1
+Content-Type: application/json
+
+{
+    "full_name":"Nguyen huu phu",
+    "email":"nhp2132@gmail.com",
+    "phone_number":"0865452090",
+    "address": "Binh Định",
+    "description":"Ẹp chai hahahahahahhaahha"
+}
+
+##################
+GET  http://localhost:4001/profile/79
+
+###
+
+GET  http://localhost:4001/apartments/city/9/apartment?type=tret
+
+###
+
+POST   http://localhost:4001/apartments/lich_su_dat_hang
+Content-Type: application/json
+
+{
+    "check_in": "2021-03-19",
+    "check_out": "2021-03-19",
+    "id_user": "79",
+    "image": "https://a0.muscache.com/im/pictures/42eef29b-9f1f-4dd1-ad06-a3549b36fc80.jpg?im_w=720",
+    "name_apartment": "Apartment with Bathtub ★ Free Beach ★Pool★Scooter",
+    "so_ngay": 1,
+    "so_tien": 11,
+    "tong_tien": 11
+}
+
+#####
+GET    http://localhost:4001/apartments/lich_su_dat_hang/119/detail
+
+#####http://localhost:4001/apartments/lich_su_dat_hang/119/detail
+GET    http://localhost:4001/apartments/lich_su_dat_hang/120
+###
+POST  http://localhost:4001/home/search
+Content-Type: application/json
+
+{
+    "name_city":"phu "
+}
+
+#####3
+
+GET  http://localhost:4001/apartments/city/1
+
+###
+POST  http://localhost:4001/apartments/info-booking_chu_nha
+Content-Type: application/json
+
+{
+    "id_own":"1"
+}

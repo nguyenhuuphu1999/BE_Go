@@ -1,0 +1,44 @@
+post:
+  tags:
+  - Tạo tài khoản cho chủ nhà và send mail xác nhận đăng ký
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: if you understand you can contacts backend
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: User 1
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: Page Home 
+      schema:
+        type: object
+        properties:
+          username:
+            type: string
+            example: huuphu
+          full_user:
+            type: string
+            example: Nguyen Huu Phu
+          date_of_birth:
+            type: int
+            example: "1999-10-28"
+          phone_number:
+            type: string
+            example: 0369202024
+          email:
+            type: string
+            example: greenabcd5@gmail.com
+        
+    

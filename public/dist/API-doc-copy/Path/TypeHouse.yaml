@@ -1,0 +1,26 @@
+get:
+  tags:
+  - Cac loai can ho
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: query
+    name: type
+  - in: body
+    name: data
+    description: Cac loai can ho cho thue
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+ 

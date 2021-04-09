@@ -1,0 +1,50 @@
+get:
+  tags:
+  - Users
+  summary: /nearhouse
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: /housenear
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: User 1
+      password:
+        type: string
+        example: "12345678"
+  responses:
+    200:
+      description: Create user success
+      schema:
+        type: object
+        properties:
+          url_image:
+            type: varchar
+            example: home/tp_hcm/page_hcm_3
+
+          title_kinds_of_house:
+            type: string
+            example: Nhà nhỏ
+
+          apartment_name:
+            type: string
+            example: Quận 1 Hẻm Lý Tự Trọng ⭐Ban Công+Bếp riêng 3
+          
+          ratings:
+            type: int
+            example: 4
+
+          price:
+            type: int
+            example: 15
+
+          name_district:
+            type: varchar
+            example: Quận 1"

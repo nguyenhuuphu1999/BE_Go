@@ -1,0 +1,86 @@
+[33mcommit 4be012200b361e71bb14dd45aba95f206856cac2[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mheroku/master[m[33m)[m
+Author: Phu Nguyen <nhp2132@gmail.com>
+Date:   Sat Jan 30 18:30:12 2021 +0700
+
+    30-1-2021
+
+[1mdiff --git a/api.http b/api.http[m
+[1mindex e4a18e7..251645e 100644[m
+[1m--- a/api.http[m
+[1m+++ b/api.http[m
+[36m@@ -142,15 +142,15 @@[m [mContent-Type: application/json[m
+ POST http://localhost:4001/register/?type=users[m
+ Content-Type: application/json[m
+ [m
+[31m-{[m
+[31m-    "username":"huuphu" ,[m
+[31m-    "passwd":"123456" ,[m
+[31m-    "full_user":"Nguyen Huu Phu",[m
+[31m-    "date_of_birth":"2021-10-28",[m
+[31m-    "address":"Hoai Nhon , Binh Dinh",[m
+[31m-    "email":"dfdfdfdf@gmail.com",[m
+[31m-    "phone_number":"0369202024"[m
+[31m-}[m
+[32m+[m[32m    {[m
+[32m+[m[32m        "username":"huuphu" ,[m
+[32m+[m[32m        "passwd":"123456" ,[m
+[32m+[m[32m        "full_user":"Nguyen Huu Phu",[m
+[32m+[m[32m        "date_of_birth":"2021-10-28",[m
+[32m+[m[32m        "address":"Hoai Nhon , Binh Dinh",[m
+[32m+[m[32m        "email":"dfdfdfdf@gmail.com",[m
+[32m+[m[32m        "phone_number":"0369202024"[m
+[32m+[m[32m    }[m
+ [m
+ [m
+ ########################### 2021-01-23 (feedback)(bo cai nay chi lay cai tren thay test dang ky user thuong hay own thay vao cho type)[m
+[1mdiff --git a/public/dist/API-doc-copy/Path/Promotion.yaml b/public/dist/API-doc-copy/Path/Promotion.yaml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..363e13e[m
+[1m--- /dev/null[m
+[1m+++ b/public/dist/API-doc-copy/Path/Promotion.yaml[m
+[36m@@ -0,0 +1,29 @@[m
+[32m+[m[32mget:[m
+[32m+[m[32m  tags:[m
+[32m+[m[32m  - Promotion[m
+[32m+[m[32m  summary:[m[41m [m
+[32m+[m[32m  consumes:[m
+[32m+[m[32m  - "application/json"[m
+[32m+[m[32m  produces:[m
+[32m+[m[32m  - "application/json"[m
+[32m+[m[32m  parameters:[m
+[32m+[m[32m  - in: body[m
+[32m+[m[32m    name: data[m
+[32m+[m[32m    description: page Promotion[m
+[32m+[m[32m  schema:[m
+[32m+[m[32m    type: object[m
+[32m+[m[32m    properties:[m
+[32m+[m[32m      name:[m
+[32m+[m[32m        type: string[m
+[32m+[m[32m        example: User 1[m
+[32m+[m[32m      password:[m
+[32m+[m[32m        type: string[m
+[32m+[m[32m        example: "khk"[m
+[32m+[m[32m  responses:[m
+[32m+[m[32m    200:[m
+[32m+[m[32m      description: Page promotion[m[41m [m
+[32m+[m[32m      schema:[m
+[32m+[m[32m        type: object[m
+[32m+[m[32m        properties:[m
+[32m+[m[41m          [m
+[32m+[m[41m              [m
+\ No newline at end of file[m
+[1mdiff --git a/public/dist/API-doc-copy/swagger.yaml b/public/dist/API-doc-copy/swagger.yaml[m
+[1mindex 1de36a7..a2bbb6f 100644[m
+[1m--- a/public/dist/API-doc-copy/swagger.yaml[m
+[1m+++ b/public/dist/API-doc-copy/swagger.yaml[m
+[36m@@ -27,7 +27,9 @@[m [mpaths:[m
+   /apartments/{id}/bookings:[m
+     $ref: Path/ListCheckBooking.yaml[m
+ [m
+[31m-[m
+[32m+[m[32m  /promotions:[m
+[32m+[m[32m    $ref: Path/Promotion.yaml[m
+[32m+[m[41m    [m
+   /users/{id}:[m
+     $ref: Path/InfoUser.yaml[m
+ [m

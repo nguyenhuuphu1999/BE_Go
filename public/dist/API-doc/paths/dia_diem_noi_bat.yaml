@@ -1,0 +1,45 @@
+get:
+  tags:
+  - Users
+  summary: GET 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: /dia_diem_noi_bat
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: User 1
+      password:
+        type: string
+        example: "12345678"
+  responses:
+    200:
+      description: 
+      schema:
+        type: object
+        properties:
+          id:
+            type: int
+            example: 1
+
+          id_country:
+            type: int
+            example: 1
+
+          name_city:
+            type: string
+            example: Thành Phố Hồ Chí Minh
+          
+          image_url:
+            type: string
+            example: home/home_tphcm
+
+
+         

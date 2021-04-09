@@ -1,0 +1,42 @@
+get:
+  tags:
+  - Thông tin người đặt phòng
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: path
+    name: id
+    description: Lấy ra thông tin người dùng để lên mô tả khi người dùng đặt phòng
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: infoUser?idUser=1
+      schema:
+        type: object
+        properties:
+          id: 
+            type: int
+            example: 8
+          full_user: 
+            type: string
+            example: Phú Nguyễn
+          email: 
+            type: string
+            example: "nhp2132@gmail.com"
+          phone_number: 
+            type: string
+            example: "123456789"
+          address: 
+            type: string
+            example: "Bình Định"

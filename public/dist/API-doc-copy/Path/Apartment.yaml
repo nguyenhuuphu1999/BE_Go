@@ -1,0 +1,54 @@
+post:
+  tags:
+  - Apartment
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: Them Apartment
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: User 1
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: Page Home 
+      schema:
+        type: object
+        properties:
+          Apartment:
+            type: object
+            properties:
+              id_district:
+                type: int
+                example: 1
+              id_city:
+                type: int
+                example: null
+              id_type_house:
+                type: int
+                example: 1
+              apartment_name:
+                type: string
+                example: ""
+              price:
+                type: int
+                example: null
+              ratings:
+                type: int
+                example: null
+              id_user_own:
+                type: int
+                example: 1
+              image_url:
+                type: string
+                example: ""

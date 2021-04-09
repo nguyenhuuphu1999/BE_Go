@@ -1,0 +1,47 @@
+put:
+  tags:
+  - Cập nhật thông tin cho chủ nhà 
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: query
+    name: type
+  - in: body
+    name: data
+    description: Thông tin chu nhà sẽ được updat theo id của chủ nhà
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: /updateProfileOwn/own
+      schema:
+        type: object
+        properties:
+          about: 
+            type: string
+            example: Chủ nhà vui tính hiền lành tốt bụng dễ thương đẹp trai
+          email: 
+            type: string
+            example: nhp2132@gmail.com
+          phone_number: 
+            type: string
+            example: "0369202024"
+          full_user: 
+            type: string
+            example: "Nguyễn Hữu Phú"
+          language: 
+            type: string
+            example: "Vietnammes"
+          id: 
+            type: int
+            example: 19

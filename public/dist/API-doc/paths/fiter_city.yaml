@@ -1,0 +1,52 @@
+get:
+  tags:
+  - Users
+  summary: GET 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: /fiter_city?id=4
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: User 1
+      password:
+        type: string
+        example: "12345678"
+  responses:
+    200:
+      description: 
+      schema:
+        type: object
+        properties:
+          url_image:
+            type: varchar
+            example: home/nha_trang/page_nha_trang_2
+
+          title_kinds_of_house:
+            type: string
+            example: Home stay
+
+          apartment_name:
+            type: string
+            example: Gold coast Nha Trang by the skyline apt
+          
+          ratings:
+            type: int
+            example: 3
+
+          price:
+            type: int
+            example: 12
+          
+          name_district:
+            type: string
+            example: Quận 1
+
+         

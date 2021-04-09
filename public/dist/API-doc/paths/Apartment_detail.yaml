@@ -1,0 +1,71 @@
+get:
+  tags:
+  - Users
+  summary: /apartment/detail?id=...
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: missing apartment comment
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: User 1
+      password:
+        type: string
+        example: "12345678"
+  responses:
+    200:
+      description:
+      schema:
+        type: object
+        properties:
+          id:
+            type: int (auto)
+            example: 10
+
+          apartment_name:
+            type: string
+            example: BenThanh 3 minutes walk - Private studio+Balcony2
+
+          price:
+            type: int
+            example: 15
+
+          ratings:
+            type: int
+            example: 4
+
+          service:
+            type: object
+            properties:
+              id_apartment:
+                type: int
+                example: 1
+              toan_bo_nha: 
+                type: string 
+                example: "Toàn bộ ngôi nhà Anh sẽ có căn hộ cho riêng mình."
+              ve_sinh_tang_cuong: 
+                type: string 
+                example: "Nâng cao sạch Máy chủ này cam kết quá trình làm sạch nâng cao 5 bước của GO."
+              tu_nhan_phong: 
+                type: string 
+                example: "Quy tắc nhà ở Chủ nhà không cho phép vật nuôi, tiệc tùng hoặc hút thuốc."
+              chinh_sach_huy: 
+                type: string 
+                example: "Chủ nhà giàu kinh nghiệm\r\n\r\nCó 120 đánh giá từ những nơi khác."
+              noi_quy_nha: 
+                type: string 
+                example: "Chính sách hủy đặt phòng\r\n\r\nThêm ngày chuyến đi của bạn để biết chi tiết hủy đặt phòng cho kỳ nghỉ này."
+      
+              
+
+
+
+                  
+         

@@ -1,0 +1,101 @@
+get:
+  tags:
+  -  Chi tiết Căn Hộ
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: path
+    name: id
+    description: Khi lick vào một căn hộ sẽ trả ra một object trong thông như bên dưới
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: /apartments/detail?id=10
+      schema:
+        type: object
+        properties:
+          apartmentPhotos:
+            type: array
+            items:
+              type: object
+              properties:
+                url_image:
+                  type: string
+                  example: home\\tp_hcm\\page_image2\\page_image2_1
+                 
+          apartment:
+              type: object
+              properties:
+                id:
+                  type: int
+                  example: 10
+                id_city:
+                  type: int
+                  example: 1
+                apartment_name:
+                  type: string
+                  example: BenThanh 3 minutes walk - Private studio+Balcony2
+                price:
+                  type: int
+                  example: 15
+                ratings:
+                  type: int
+                  example: 4
+          
+          apartmentDetail:
+              type: object
+              properties:
+                id:
+                  type: int
+                  example: 1
+                id_apartment:
+                  type: int
+                  example: 10 
+                toan_bo_nha:
+                  type: string
+                  example: Toàn bộ ngôi nhà Anh sẽ có căn hộ cho riêng mình."
+                ve_sinh_tang_cuong:
+                  type: string
+                  example: Nâng cao sạch Máy chủ này cam kết quá trình làm sạch nâng cao 5 bước của GO. 
+                tu_nhan_phong:
+                  type: string
+                  example: Quy tắc nhà ở Chủ nhà không cho phép vật nuôi, tiệc tùng hoặc hút thuốc.
+                chinh_sach_huy:
+                  type: string
+                  example: Chủ nhà giàu kinh nghiệm\r\n\r\nCó 120 đánh giá từ những nơi khác.
+                noi_quy_nha:
+                  type: string
+                  example: Chính sách hủy đặt phòng\r\n\r\nThêm ngày chuyến đi của bạn để biết chi tiết hủy đặt phòng cho kỳ nghỉ này.
+            
+          comment:
+            type: array
+            items:
+              type: object
+              properties:
+                id_apartment:
+                  type: int
+                  example: 10
+                comment:
+                  type: int
+                  example: Chỗ ở giống y như hình, nội thất, cách bài trí làm phòng rất rộng rãi và tinh tươm.
+                rattings:
+                  type: int
+                  example: 5
+                user:
+                  type: object
+                  properties:
+                    address:
+                      type: string
+                      example: Bình Định
+                       

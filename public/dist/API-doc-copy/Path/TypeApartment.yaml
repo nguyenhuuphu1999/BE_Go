@@ -1,0 +1,72 @@
+get:
+  tags:
+  - Các loại căn hộ
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: path
+    name: id
+    description: Khi lick vào một loại căn hộ trên thành phố sẽ lấy ra được tất cả các căn hộ trong thành phố đó với " type = array"
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: apartments/typeApartment?idTypeHouse=5
+      schema:
+        type: object
+        properties:
+          diaDiemNoiBatChiTiet:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: int
+                  example: 12
+                id_city:
+                    type: int
+                    example: 1
+                id_type_house:
+                    type: int
+                    example: 5
+                apartment_name:
+                    type: string
+                    example: ☀ BRIGHT 1br + balcony + parking @CENTRAL D1 ☀
+                price:
+                    type: int
+                    example: 13
+                ratings:
+                    type: int
+                    example: 0
+                apartment_image:
+                    type: object
+                    properties:
+                      url_image:
+                          type: string,
+                          example: "home/tp_hcm/page_hcm_23"
+                 
+          diaDiemNoiBat:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: int
+                  example: 1
+                name_city:
+                    type: string
+                    example: Thành Phố Hồ Chí Minh
+                image_url:
+                    type: string
+                    example: home/home_tphcm
+              

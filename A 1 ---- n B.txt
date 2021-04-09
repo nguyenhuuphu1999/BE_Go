@@ -1,0 +1,7 @@
+A  1 ---- n B
+B belongs to A
+A has many B 
+
+A 1 --- 1 B 
+A has One B 
+B belngs to  A

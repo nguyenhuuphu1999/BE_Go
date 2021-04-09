@@ -1,0 +1,74 @@
+get:
+  tags:
+  - Dia Diem noi bat thong tin chi tiet
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: path
+    name: id
+  - in: query
+    name: type
+    description: type hotels=khách sạn , apartment= căn hộ , motels=khách sạn cho thuê và '' = tầng trệt
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: /apartments/diaDiemNoiBatChiTiet?idDetail=2
+      schema:
+        type: object
+        properties:
+          diaDiemNoiBatChiTiet:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: int
+                  example: 91
+                id_city:
+                    type: int
+                    example: 2
+                id_type_house:
+                    type: int
+                    example: 2
+                apartment_name:
+                    type: string
+                    example: ☀ Sunny studio, heart of D1 ☀"
+                price:
+                    type: int
+                    example: 11
+                ratings:
+                    type: int
+                    example: 3
+                apartment_image:
+                    type: object
+                    properties:
+                      url_image:
+                          type: string,
+                          example: home/pleku/page_pleku_2
+                 
+          diaDiemNoiBat:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: int
+                  example: 1
+                name_city:
+                    type: string
+                    example: Thành Phố Hồ Chí Minh
+                image_url:
+                    type: string
+                    example: home/home_tphcm
+              

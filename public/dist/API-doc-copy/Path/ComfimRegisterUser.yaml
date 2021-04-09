@@ -1,0 +1,34 @@
+post:
+  tags:
+  - Xác nhận và kích hoạt tài khoản cho user
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: kiễm tra và update lại ma key register sau khi user nhập ma tu email.Và kích hoạt acc cho user chu nha ( status)
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: /apartments/checkBooking
+      schema:
+        type: object
+        properties:
+          id: 
+            code: string
+            example: '293009'
+          email: 
+            code: string
+            example: 'greenacd5@gmail.com'
+       

@@ -1,0 +1,54 @@
+post:
+  tags:
+  - Lưu Thông tin đặt phòng
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: Lưu thông tin người đặt phòng với các thông tin bên dưới
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khk"
+  responses:
+    200:
+      description: /booking
+      schema:
+        type: object
+        properties:
+          id_apartment: 
+            type: int
+            example: 21
+          id_user: 
+            type: int
+            example: 1
+          check_in: 
+            type: int 
+            example: "2021-01-21"
+          check_out: 
+            type: string
+            example: "2021-01-22"
+          ho_ten: 
+            type: string
+            example: Nguyen huu phu
+          email: 
+            type: string
+            example: nhp2132@gmail.com
+          so_dien_thoai: 
+            type: string 
+            example: 01365355
+          phi_dich_vu: 
+            type: int
+            example: 15
+          total: 
+            type: int
+            example: 71

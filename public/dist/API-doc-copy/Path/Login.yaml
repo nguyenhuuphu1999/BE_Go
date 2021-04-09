@@ -1,0 +1,38 @@
+post:
+  tags:
+  -  Login
+  summary: 
+  consumes:
+  - "application/json"
+  produces:
+  - "application/json"
+  parameters:
+  - in: body
+    name: data
+    description: 
+  schema:
+    type: object
+    properties:
+      name:
+        type: string
+        example: sdsd
+      password:
+        type: string
+        example: "khksssssss"
+  responses:
+    200:
+      description: register/user
+      schema:
+        type: object
+        properties:
+          Data:
+            type: string
+            example: []
+          access_token:
+            type: string
+            example: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImRhdGEiOnsiRnVsbG5hbWUiOiIiLCJlbWFpbCI6Im5ocDIxMzJAZ21haWwuY29tIn19LCJpYXQiOjE2MTQxMzI3NjUsImV4cCI6MTYxNDEzNjM2NX0.mmRhk5tW8xwHYb0fQxV1MAY3b88Cm8NAVb7atcGXNEDZ-Go3XsniWDPc4-mugXciMbmA94cgH6hPo4VhENHccA"
+          err:
+            type: string
+            example: false
+          date_of_birth:
+           
