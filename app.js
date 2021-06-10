@@ -7,21 +7,6 @@ var cors = require('cors')
 var bodyParser = require('body-parser')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-// var lease_houseRouter = require('./routes/Page_home/lease-house.js');
-// var house_nearRouter = require('./routes/Page_home/filter_house_near.js');
-// var rattingRouter = require('./routes/Page_home/ratting.js');
-// var dia_diem_noi_batRouter = require('./routes/Page_home/dia_diem_noi_bat');
-// var fiter_city_Router = require('./routes/fitter_city');
-// var ApartmentDeatailRouter = require('./routes/apartment_detail');
-
-// var ApartmentCommentDeatalRouter = require('./routes/apartment_comment');
-// var Dang_kyRouter = require('./routes/Dang_ky');
-
-// var footerRouter = require('./routes/Footer/title');
-// var footer_cong_dongRouter = require('./routes/Footer/title_cong_dong');
-// var footer_don_tiep_khachRouter = require('./routes/Footer/title_don_tiep_khach');
-// var footer_gioi_thieuRouter = require('./routes/Footer/title_gioi_thieu');
-// var LoginRouter = require('./routes/Login');
 var PromotionRouter = require('./routes/Promotion');
 // var HotelRouter = require('./routes/Hotel_nearBy');
 // var ChoOGanBanRouter = require('./routes/Cho_o_gan_ban');
@@ -37,6 +22,8 @@ var ListCheckBooking = require('./routes/Component/ListCheckBooking')
 var InfoUser = require('./routes/Component/InfoUser')
 var apartments = require('./routes/Page/Apartment')
 var Register = require('./routes/Component/Register/Register')
+var RegisterSocial = require('./routes/Component/Register/RegisterSocial')
+
 var RegisterOwn = require('./routes/Component/Register/RegisterAccountForOwn')
 var SendMailForandResgisterOwn  =require('./routes/Component/Register/SendMailForResgisterOwn');
 var comfimRegister  =require('./routes/Component/ComfimResister');
@@ -49,25 +36,13 @@ var UpdateApartment  =require('./routes/Component/AupdateApartment/UpdateApartme
 var TypeHouse = require('./routes/Component/TypeHouse/TypeHouse');
 var Login = require('./routes/Login/Login');
 var Profile = require('./routes/Component/Profile/Profile');
-
+var Message =require('./routes/Message/Message')
 // var swagger = require('./swagger/index.html');
 var Rooms = require('./routes/Component/Rooms/Rooms');
 
 var app = express();
 
 
-// app.use((req,res,next)=>{
-//   res.header("Access-Control-Allow-Origin","*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-//   )
-//   if(req.method === 'OPTION'){
-//     res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
-//     return res.status(200).json({});
-//   }
-//   next();
-// });
 
 // view engine setup
 
@@ -105,25 +80,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('/apartment', lease_houseRouter);
-// app.use('/housenear', house_nearRouter);
-// app.use('/feedback', rattingRouter);
-// app.use('/dia_diem_noi_bat',dia_diem_noi_batRouter);
-// app.use('/fiter_city',fiter_city_Router);
-// app.use('/fiter_city',fiter_city_Router);
 
-// app.use('/footer', footerRouter);
-// app.use('/footer_cong_dong', footer_cong_dongRouter);
-// app.use('/footerdon_tiep_khach', footer_don_tiep_khachRouter);
-// app.use('/footer_gioi_thieu', footer_gioi_thieuRouter);
-// app.use('/apartment',ApartmentDeatailRouter);
-
-// app.use('/apartment',ApartmentCommentDeatalRouter);
-// app.use('/dang_ky',Dang_kyRouter);
-// app.use('/login',LoginRouter);
 app.use('/promotions',PromotionRouter);
-// app.use('/hotelnearby',HotelRouter);
-// app.use('/cho_o_gan_ban',ChoOGanBanRouter);
+app.use('/message',Message)
 
 ///////////////////////////////////////////////////////////////
 
@@ -137,6 +96,7 @@ app.use('/users',InfoUser);
 app.use('/apartments',apartments);
 app.use('/apartments',CheckBooking);
 app.use('/register',Register);
+app.use('/registerSocial',RegisterSocial);
 app.use('/RegisterOwn',RegisterOwn);
 
 app.use('/sendMailForResgister',SendMailForandResgisterOwn);

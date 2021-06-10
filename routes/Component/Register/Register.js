@@ -43,40 +43,46 @@ router.post("/", async (req, res) => {
         created_at: Date.now(),
         description: "",
       });
-  mailer;
-  let transporter = await nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+  // mailer;
+  // let transporter = await nodemailer.createTransport({
+  //   host: "smtp.gmail.com",
+  //   port: 587,
+  //   secure: false,
 
-    auth: {
-      user: process.env.EMAIL, // generated ethereal user
-      pass: process.env.PASSWORD,
-    },
-  });
+  //   auth: {
+  //     user: process.env.EMAIL, // generated ethereal user
+  //     pass: process.env.PASSWORD,
+  //   },
+  // });
 
-  let mailOptions = await transporter.sendMail(
-    {
-      from: "servermail738@gmail.com", // sender address
-      to: req.body.email, // list of receivers
-      subject: "GO BOOKING APARTMENT ", // Subject line
-      text: "dfdfd", // plain text body
-      html: `Mật khẩu của bạn là :<b>${req.body.passwd}</b> <p><i>Vui lòng không tiết lộ mật khẩu này ra ngoài</i><p>`, // html body
-    },
-    (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("data");
-      }
-    }
-  );
+  // let mailOptions = await transporter.sendMail(
+  //   {
+  //     from: "servermail738@gmail.com", // sender address
+  //     to: req.body.email, // list of receivers
+  //     subject: "GO BOOKING APARTMENT ", // Subject line
+  //     text: "dfdfd", // plain text body
+  //     html: `Mật khẩu của bạn là :<b>${req.body.passwd}</b> <p><i>Vui lòng không tiết lộ mật khẩu này ra ngoài</i><p>`, // html body
+  //   },
+  //   (err, data) => {
+  //     if (err) {
+  //       console.log(err);
+  //     } else {
+  //       console.log("data");
+  //     }
+  //   }
+  // );
 
   //mialler
+      console.log(register)
       const data = {
         // data tao token
-        Fullname: req.body.full_name,
-        email: req.body.email,
+          id:register.id,
+          create_at:register.created_at,
+          email:register.email,
+          avatar:register.avatar,
+          full_name:register.full_name,
+          phone_number:register.phone_number,
+          address:register.address
       };
       const token = jwt.sign(
         //  tao token
@@ -107,7 +113,7 @@ router.post("/", async (req, res) => {
       // dang ky cho user chu nha
 
       res.json({
-        message: "Register use thuong fail , please check your email . ",
+        message: "Register use thuong fail, please check your email. ",
         error: true,
       });
     }
@@ -144,11 +150,16 @@ router.post("/", async (req, res) => {
         avartar: "",
         status: 1,
       });
+      console.log(register)
 
       const data = {
         // data tao token
-        Fullname: req.body.full_name,
-        email: req.body.email,
+        // id:result.id,
+        // create_at:result.created_at,
+        // email:result.email,
+        // avatar:result.avatar,
+        // full_name:result.full_name,
+        // phone_number:result.phone_number
       };
       const token = jwt.sign(
         //  tao token
@@ -168,6 +179,7 @@ router.post("/", async (req, res) => {
           .split(".")[0]
           .replace(/T/, " "),
       });
+     
       console.log(resultAddToken);
 
       res.json({
